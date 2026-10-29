@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Хроника эпох России: правители, события и изображения от 1413 года до наших дней.">
+  <meta name="theme-color" content="#0f0f0f">
+  <title>Хроника эпох — История России</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="сайт.html" title="На главную — к карте">
+      ИСТОРИЯ РОССИИ<small>1413 — 2025</small>
+    </a>
+    <div class="header-actions">
+      <button class="menu-btn" id="epochs-toggle">ЭПОХИ<svg class="caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <a class="menu-btn nav-link" id="map-link" href="сайт.html">НА КАРТУ</a>
+      <div class="epochs-menu" id="epochs-menu"></div>
+    </div>
+  </header>
+
+  <div class="chrono">
+    <aside class="era-rail">
+      <div class="rail-title">Все эпохи</div>
+      <nav class="rail-list" id="rail-list"></nav>
+    </aside>
+
+    <main class="era-detail" id="era-detail">
+      <section class="era-hero">
+        <figure class="ruler">
+          <div class="ruler-frame">
+            <img id="ruler-img" alt="" draggable="false" decoding="async">
+            <div class="ruler-ph" id="ruler-ph">
+              <svg viewBox="0 0 64 64" fill="none" stroke="#e6b800" stroke-width="1.6" aria-hidden="true">
+                <circle cx="32" cy="22" r="11"></circle>
+                <path d="M10 58c0-11 9.8-19 22-19s22 8 22 19"></path>
+              </svg>
+              <span>Портрет правителя</span>
+            </div>
+          </div>
+          <figcaption>
+            <span class="ruler-name" id="ruler-name">—</span>
+            <span class="ruler-years" id="ruler-years">—</span>
+          </figcaption>
+        </figure>
+
+        <div class="era-copy">
+          <div class="era-eyebrow">
+            <span class="dot"></span>
+            <span>Хроника эпохи</span>
+            <b id="era-range">1413–1446</b>
+          </div>
+          <h1 id="era-title">Начало возвышения Москвы</h1>
+          <p class="era-lead" id="era-lead"></p>
+          <div class="era-story" id="era-story"></div>
+          <div class="era-facts" id="era-facts"></div>
+        </div>
+      </section>
+
+      <section class="era-gallery-block">
+        <div class="block-head">
+          <h2>Изображения эпохи</h2>
+          <span class="block-line"></span>
+          <span class="block-count" id="gallery-count"></span>
+        </div>
+        <div class="era-gallery" id="era-gallery"></div>
+      </section>
+
+      <nav class="era-pager">
+        <button class="pager-btn" id="prev-era">← Предыдущая эпоха</button>
+        <button class="pager-btn" id="next-era">Следующая эпоха →</button>
+      </nav>
+    </main>
+  </div>
+
+  <div class="chrono-bar">
+    <div class="bar-row">
+      <div class="bar-year">
+        <span class="bar-year-label">Год</span>
+        <span id="bar-year">1413</span>
+      </div>
+      <div class="slider-container">
+        <input type="range" id="year-slider" min="1413" max="2025" step="1" value="1413">
+      </div>
+    </div>
+    <div class="bar-marks" id="bar-marks"></div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lb-close" title="Закрыть (Esc)">✕</button>
+    <img id="lb-img" alt="" decoding="async">
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+
+  <script src="js/eras-data.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

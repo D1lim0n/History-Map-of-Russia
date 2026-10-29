@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Интерактивная карта истории границ России: от Московского княжества 1413 года до наших дней.">
+  <meta name="theme-color" content="#0f0f0f">
+  <title>История Границ: Интерактивная Карта</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="сайт.html" title="На главную">
+      ИСТОРИЯ РОССИИ<small>1413 — 2025</small>
+    </a>
+    <div class="header-actions">
+      <button class="menu-btn" id="epochs-toggle">ЭПОХИ<svg class="caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+      <a class="menu-btn nav-link" id="chronicle-link" href="gallery.html">ХРОНИКА</a>
+      <div class="epochs-menu" id="epochs-menu"></div>
+    </div>
+  </header>
+
+  <div class="map-viewport" id="viewport">
+    <div class="map-container">
+      <div class="pan-zoom" id="pan-zoom">
+        <div class="map-frame">
+          <img id="map-image" alt="Карта России" src="" draggable="false" decoding="async" fetchpriority="high">
+          <div class="map-placeholder" id="map-placeholder">
+            <span class="ph-year" id="ph-year">1413</span>
+            <span class="ph-text">Фото карты ещё не загружено</span>
+            <span class="ph-hint" id="ph-hint">assets/maps/1413.png</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zoom-controls">
+      <button class="zoom-btn" id="zoom-in" title="Приблизить">+</button>
+      <button class="zoom-btn" id="zoom-out" title="Отдалить">−</button>
+      <button class="zoom-btn" id="zoom-reset" title="Сброс">⟳</button>
+      <button class="zoom-btn" id="zoom-full" title="На весь экран">⛶</button>
+    </div>
+  </div>
+
+  <div class="hud-hint">
+    <b>Управление:</b><br>
+    ЛКМ + движение — панорама<br>
+    Shift + колесо — зум<br>
+    Колесо — смена года<br>
+    Пробел — воспроизведение<br>
+    Тач: 1 палец — панорама<br>
+    2 пальца — зум
+  </div>
+
+  <div class="epoch-info" id="epoch-info">
+    <span class="range" id="epoch-range">1413–1446</span>
+    <h3 id="epoch-title">Начало возвышения Москвы</h3>
+    <p id="epoch-desc">Московское княжество в период собирания земель и борьбы за ярлык.</p>
+    <a class="epoch-more" id="epoch-more" href="gallery.html">Хроника эпохи →</a>
+  </div>
+
+  <div class="timeline-controls">
+    <div class="year-info">
+      <div class="year-number" id="year-display">1413</div>
+      <div class="year-range" id="year-range">Карта: <b>1413–1446</b></div>
+      <div class="year-caption" id="year-caption">Начало возвышения Москвы</div>
+    </div>
+
+    <div class="slider-container">
+      <input type="range" id="year-slider" min="1413" max="2025" step="1" value="1413">
+    </div>
+
+    <div class="timeline-marks" id="timeline-marks"></div>
+    <div class="mark-preview" id="mark-preview">
+      <img id="mark-preview-img" alt="" decoding="async">
+      <span id="mark-preview-label"></span>
+    </div>
+
+    <div class="playback">
+      <button id="play-btn">▶ ВОСПРОИЗВЕДЕНИЕ</button>
+      <button id="prev-btn">◀</button>
+      <button id="next-btn">▶</button>
+    </div>
+
+    <div class="speed-bar" id="speed-bar">
+      <span class="speed-label">Скорость:</span>
+      <button class="speed-btn" data-speed="1">1x</button>
+      <button class="speed-btn" data-speed="1.5">1.5x</button>
+      <button class="speed-btn active" data-speed="2">2x</button>
+      <button class="speed-btn" data-speed="2.5">2.5x</button>
+      <button class="speed-btn" data-speed="3">3x</button>
+    </div>
+  </div>
+
+  <script src="js/eras-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
